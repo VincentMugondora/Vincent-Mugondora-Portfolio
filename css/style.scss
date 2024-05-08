@@ -5,6 +5,11 @@
    License: none (public domain)
 */
 
+@font-face {
+    font-family: "open-sans";
+    src: url(../Lato/Lato-Regular.ttf);
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -32,6 +37,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    font-family: "open-sans";
 }
 ol, ul {
 	list-style: none;
@@ -120,9 +126,6 @@ table {
         }
 
         .dark-theme{
-            .circle{
-                background: white;
-            }
             .off{
                 display: none;
             }
@@ -208,36 +211,67 @@ table {
 }
 
 // BANNER SECTION
+.underline{
+    width: 100%;
+    height: 2px;
+    background: grey;
+    z-index: 5;
+    box-shadow: 0px 1px 3px;
+}
 .banner{
     width: 100%;
     height: 100vh;
 
     .banner-one{
         width: 100%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
+        height: 79vh;
         
         .images-one{
-            display: flex;
-            position: relative;
 
+            img{
+                border-radius: 50%;
+                border: 10px solid gray;
+                box-shadow: 0 0 20px;
+            }
+
+            // .circle-one{
+            //     height: fit-content;
+            //     width: fit-content;
+            //     border: 10px solid grey;
+            //     border-radius: 50%;
+            //     box-shadow: 0px 2px 10px;
+            // }
+
+            .two{
+                display: none;
+            }
             .white{
                 position: relative;
                 width: 100%;
+                margin-left: 5px;
             }
-
-            .black{
-                position: absolute;
-                z-index: -1;
-                width: 100%;
+            .text{
+                text-align: center;
+                h4{
+                    font-size: 2rem;
+                    margin-top: 20px;
+                }
+                h2{
+                    font-size: 2.5rem;
+                    margin-top: 20px;
+                }
+                button{
+                    padding: 10px 38px;
+                    border: 3px solid #004F8F;
+                    border-radius: 40px;
+                    background: #444444;
+                    color: white;
+                    margin-top: 20px;
+                }
+                .button{
+                    border-color: #212121;
+                }
             }
-        }
-    }
-
-    .images-black{
-        .black{
-            z-index: 5;
         }
     }
 }
@@ -262,6 +296,10 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 568px) {  
+   
+}
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
     .navbar{
         .mobile-nav{
             display: none;
@@ -308,9 +346,6 @@ No media query since this is the default in Bootstrap because it is "mobile firs
             }
 
             .dark-theme{
-                .circle{
-                    background: white;
-                }
                 .off{
                     display: none;
                 }
@@ -346,11 +381,12 @@ No media query since this is the default in Bootstrap because it is "mobile firs
             }
         }
     }
-}
 
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {  
-
+    .banner-one{
+      .images-one{
+        margin-top: 50px;
+      }
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -359,6 +395,27 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     .link{
         .anchors{
             margin-right: 50px;
+        }
+    }
+}
+.banner-one{
+    .images-one{
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center
+
+        h4{
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        h2{
+            font-size: 6rem;
         }
     }
 }
