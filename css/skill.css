@@ -1,0 +1,988 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+body a {
+  color: black;
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.dark-mode {
+  background: #212121;
+  color: white;
+}
+.dark-mode a {
+  color: white;
+}
+
+.navbar {
+  position: relative;
+}
+.navbar .pc-nav {
+  display: none;
+}
+.navbar .underline {
+  width: 100%;
+  height: 2px;
+  background: grey;
+  z-index: 5;
+  box-shadow: 0px 1px 3px;
+}
+.navbar .overlay {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4431372549);
+}
+.navbar .links {
+  width: 100%;
+  height: 100vh;
+  background: #004F8F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 45px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  margin-top: -100vh;
+  transition: all ease-in 1s;
+  z-index: 10;
+  position: fixed;
+}
+.navbar .links .dark {
+  width: 120px;
+  height: 40px;
+  border-radius: 50px;
+  background: rgb(58, 57, 57);
+  box-shadow: 0px 3px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px;
+  border: 3px solid #444444;
+}
+.navbar .links .dark .circle {
+  width: 60px;
+  height: 32px;
+  background: #444444;
+  border-radius: 50px;
+}
+.navbar .links .dark p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00929F;
+}
+.navbar .links .dark .on {
+  display: none;
+}
+.navbar .links .dark .off {
+  margin-right: 3px;
+}
+.navbar .links .dark-theme .off {
+  display: none;
+}
+.navbar .links .dark-theme .on {
+  display: block;
+}
+.navbar .links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+.navbar .sliding-menu {
+  transform: translateY(100vh);
+  transition: all ease-in 1s;
+}
+.navbar .mobile-nav {
+  width: 100%;
+}
+.navbar .mobile-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .mobile-nav img {
+  height: 80px;
+  z-index: 15;
+}
+.navbar .mobile-nav .hamburger {
+  height: 55px;
+  width: 65px;
+  border: 3px solid #444444;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  z-index: 15;
+  transition: all ease-out 1s;
+}
+.navbar .mobile-nav .hamburger .line {
+  width: 70%;
+  height: 3px;
+  background: #444444;
+  border-radius: 1px;
+  transition: all ease-in-out 2s;
+}
+.navbar .mobile-nav .exit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all ease-in-out 2s;
+  border-color: grey;
+}
+.navbar .mobile-nav .exit .lines {
+  transform: rotate(45deg);
+  position: absolute;
+  background: grey;
+  border-radius: 2px;
+  z-index: 5;
+  transition: all ease-in-out 2s;
+}
+.navbar .mobile-nav .exit .middle {
+  opacity: 0;
+}
+.navbar .mobile-nav .exit .line1 {
+  transform: rotate(-45deg);
+  position: absolute;
+  background: grey;
+  border-radius: 2px;
+  z-index: 5;
+  transition: all ease-in-out 2s;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 50px;
+  /* if value is less than 50%, then */
+}
+.skills h3,
+.skills h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.skills .progress1 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(67, 65, 65) linear-gradient(to right, transparent 50%, var(--clr) 0);
+}
+.skills .progress1 h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+}
+.skills .progress1 h3 span {
+  font-size: 0.65em;
+  font-weight: 400;
+}
+.skills .progress1 h4 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: 700;
+  color: var(--clr);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.skills .progress1::before {
+  content: "";
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  transform-origin: left;
+  border-radius: 0 100% 100% 0/50%;
+}
+.skills .progress1::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: #212121;
+  background: url("../images/cvb.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+.skills .progress1:hover:after {
+  transition: all 1s ease-in-out;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+}
+.skills .progress1::before {
+  background: var(--clr);
+  transform: rotate(calc((var(--i) - 50) * 0.01turn));
+}
+.skills .progress2 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(67, 65, 65) linear-gradient(to right, transparent 50%, var(--clr) 0);
+}
+.skills .progress2 h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+}
+.skills .progress2 h3 span {
+  font-size: 0.65em;
+  font-weight: 400;
+}
+.skills .progress2 h4 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: 700;
+  color: var(--clr);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.skills .progress2::before {
+  content: "";
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  transform-origin: left;
+  border-radius: 0 100% 100% 0/50%;
+}
+.skills .progress2::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: #212121;
+  background: url("../images/vinb.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+.skills .progress2:hover:after {
+  transition: all 1s ease-in-out;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+}
+.skills .progress2::before {
+  background: var(--clr);
+  transform: rotate(calc((var(--i) - 50) * 0.01turn));
+}
+.skills .progress3 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(67, 65, 65) linear-gradient(to right, transparent 50%, var(--clr) 0);
+}
+.skills .progress3 h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+}
+.skills .progress3 h3 span {
+  font-size: 0.65em;
+  font-weight: 400;
+}
+.skills .progress3 h4 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: 700;
+  color: var(--clr);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.skills .progress3::before {
+  content: "";
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  transform-origin: left;
+  border-radius: 0 100% 100% 0/50%;
+}
+.skills .progress3::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: #212121;
+  background: url("../images/js.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+.skills .progress3:hover:after {
+  transition: all 1s ease-in-out;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+}
+.skills .progress3::before {
+  background: var(--clr);
+  transform: rotate(calc((var(--i) - 50) * 0.01turn));
+}
+.skills .progress4 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(67, 65, 65) linear-gradient(to right, transparent 50%, var(--clr) 0);
+}
+.skills .progress4 h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+}
+.skills .progress4 h3 span {
+  font-size: 0.65em;
+  font-weight: 400;
+}
+.skills .progress4 h4 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: 700;
+  color: var(--clr);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.skills .progress4::before {
+  content: "";
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  transform-origin: left;
+  border-radius: 0 100% 100% 0/50%;
+}
+.skills .progress4::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: #212121;
+  background: url("../images/Python - MI PORTAL.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+.skills .progress4:hover:after {
+  transition: all 1s ease-in-out;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+}
+.skills .progress4::before {
+  background: var(--clr);
+  transform: rotate(calc((var(--i) - 50) * 0.01turn));
+}
+.skills .progress5 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(67, 65, 65) linear-gradient(to right, transparent 50%, var(--clr) 0);
+}
+.skills .progress5 h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+}
+.skills .progress5 h3 span {
+  font-size: 0.65em;
+  font-weight: 400;
+}
+.skills .progress5 h4 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: 700;
+  color: var(--clr);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.skills .progress5::before {
+  content: "";
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  transform-origin: left;
+  border-radius: 0 100% 100% 0/50%;
+}
+.skills .progress5::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: #212121;
+  background: url("../images/photoshop.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+.skills .progress5:hover:after {
+  transition: all 1s ease-in-out;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+}
+.skills .progress5::before {
+  background: var(--clr);
+  transform: rotate(calc((var(--i) - 50) * 0.01turn));
+}
+.skills .progress6 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(67, 65, 65) linear-gradient(to right, transparent 50%, var(--clr) 0);
+}
+.skills .progress6 h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+}
+.skills .progress6 h3 span {
+  font-size: 0.65em;
+  font-weight: 400;
+}
+.skills .progress6 h4 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: 700;
+  color: var(--clr);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.skills .progress6::before {
+  content: "";
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  transform-origin: left;
+  border-radius: 0 100% 100% 0/50%;
+}
+.skills .progress6::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: #212121;
+  background: url("../images/vine.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+.skills .progress6:hover:after {
+  transition: all 1s ease-in-out;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+}
+.skills .progress6::before {
+  background: var(--clr);
+  transform: rotate(calc((var(--i) - 50) * 0.01turn));
+}
+.skills .progress7 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(67, 65, 65) linear-gradient(to right, transparent 50%, var(--clr) 0);
+}
+.skills .progress7 h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+}
+.skills .progress7 h3 span {
+  font-size: 0.65em;
+  font-weight: 400;
+}
+.skills .progress7 h4 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: 700;
+  color: var(--clr);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.skills .progress7::before {
+  content: "";
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  transform-origin: left;
+  border-radius: 0 100% 100% 0/50%;
+}
+.skills .progress7::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: #212121;
+  background: url("../images/OIP (1).jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+.skills .progress7:hover:after {
+  transition: all 1s ease-in-out;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+}
+.skills .progress7::before {
+  background: var(--clr);
+  transform: rotate(calc((var(--i) - 50) * 0.01turn));
+}
+.skills .progress8 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgb(67, 65, 65) linear-gradient(to right, transparent 50%, var(--clr) 0);
+}
+.skills .progress8 h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #fff;
+}
+.skills .progress8 h3 span {
+  font-size: 0.65em;
+  font-weight: 400;
+}
+.skills .progress8 h4 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: 700;
+  color: var(--clr);
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+.skills .progress8::before {
+  content: "";
+  display: block;
+  height: 100%;
+  margin-left: 50%;
+  transform-origin: left;
+  border-radius: 0 100% 100% 0/50%;
+}
+.skills .progress8::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: #212121;
+  background: url("../images/Scratch Logo.jpg");
+  background-position: center;
+  background-size: cover;
+  transition: all 1s ease-in-out;
+}
+.skills .progress8:hover:after {
+  transition: all 1s ease-in-out;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+}
+.skills .progress8::before {
+  background: var(--clr);
+  transform: rotate(calc((var(--i) - 50) * 0.01turn));
+}
+
+.footer {
+  padding: 1.8rem 0;
+  text-align: center;
+  box-shadow: -5px 0px 10px;
+}
+.footer ul {
+  display: none;
+}
+.footer ul a {
+  font-size: 1.2rem;
+}
+.footer p {
+  margin-top: 5px;
+}
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* 
+Extra small devices (portrait phones, less than 576px) 
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+/* Small devices (landscape phones, 576px and up) */
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+.skills .cards {
+  margin-top: 20px;
+  border-radius: 20px;
+  height: 350px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(45, 44, 44, 0.8470588235);
+  position: relative;
+}
+.skills .cards .shadow {
+  position: absolute;
+  left: 0;
+  border-radius: 20px 0px 0px 20px;
+  height: 350px;
+  width: 125px;
+  background: #181818;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .pc-nav .link {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .navbar .mobile-nav {
+    display: none;
+  }
+  .navbar .links {
+    display: none;
+  }
+  .navbar .pc-nav {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .navbar .pc-nav .dark2 {
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
+    background: rgb(58, 57, 57);
+    box-shadow: 0px 3px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+    border: 3px solid #444444;
+    cursor: pointer;
+  }
+  .navbar .pc-nav .dark2 .circle {
+    width: 60px;
+    height: 32px;
+    background: #444444;
+    border-radius: 50px;
+  }
+  .navbar .pc-nav .dark2 p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #00929F;
+  }
+  .navbar .pc-nav .dark2 .on {
+    display: none;
+  }
+  .navbar .pc-nav .dark2 .off {
+    margin-right: 3px;
+  }
+  .navbar .pc-nav .dark-theme .off {
+    display: none;
+  }
+  .navbar .pc-nav .dark-theme .on {
+    display: block;
+  }
+  .navbar .pc-nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar .pc-nav img {
+    height: 4rem;
+  }
+  .navbar .pc-nav .link li {
+    display: inline-block;
+    position: relative;
+  }
+  .navbar .pc-nav .link ul {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+  }
+  .navbar .pc-nav .link .home {
+    color: #004F8F;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .navbar .pc-nav .link a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+  }
+  .navbar .pc-nav .link li::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #004F8F;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+  }
+  .navbar .pc-nav .link li:hover::after {
+    width: 100%;
+  }
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .footer ul {
+    display: block;
+    display: flex;
+    gap: 30px;
+  }
+  .footer div {
+    display: none;
+  }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+*/
+/* Set width to make card deck cards 100% width *//*# sourceMappingURL=skill.css.map */
