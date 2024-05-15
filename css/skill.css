@@ -108,9 +108,10 @@ section {
 
 body {
   line-height: 1;
+  background-color: #212121;
 }
 body a {
-  color: black;
+  color: white !important;
   text-decoration: none;
 }
 
@@ -833,6 +834,7 @@ table {
 }
 .footer p {
   margin-top: 5px;
+  color: white;
 }
 
 /*
@@ -943,7 +945,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     align-items: center;
   }
   .navbar .pc-nav .link .home {
-    color: #004F8F;
+    color: #004F8F !important;
     font-size: 2rem;
     cursor: pointer;
   }

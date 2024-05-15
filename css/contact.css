@@ -2,19 +2,86 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -24,25 +91,40 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
 body {
   line-height: 1;
+  background: #212121;
+  color: white;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -52,9 +134,19 @@ table {
   border-spacing: 0;
 }
 
+body {
+  background-color: #212121 !important;
+}
+body a {
+  color: white !important;
+}
+body p {
+  color: white !important;
+}
+
 .dark-mode {
-  background: #212121;
-  color: white;
+  background: #fff;
+  color: black;
 }
 .dark-mode a {
   color: white;
@@ -65,13 +157,6 @@ table {
 }
 .navbar .pc-nav {
   display: none;
-}
-.navbar .underline {
-  width: 100%;
-  height: 2px;
-  background: grey;
-  z-index: 5;
-  box-shadow: 0px 1px 3px;
 }
 .navbar .overlay {
   width: 100%;
@@ -139,7 +224,10 @@ table {
   transition: all ease-in 1s;
 }
 .navbar .mobile-nav {
+  margin-top: -10px;
   width: 100%;
+  padding: 10px 0px;
+  box-shadow: 0px 5px 5px white;
 }
 .navbar .mobile-nav .container {
   display: flex;
@@ -205,71 +293,96 @@ table {
 .banner h2 {
   text-align: center;
   margin-bottom: 20px;
+  color: white;
 }
 .banner span {
   color: #004F8F;
 }
-.banner .contact {
-  display: flex;
-  justify-content: space-between;
-}
-.banner .contact button {
-  padding: 10px 2rem;
-  background: #444444;
-  border: 3px solid #004F8F;
-  border-radius: 30px;
-  color: white;
-}
 .banner .contact .details {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
 }
-.banner .contact .details .captcha {
-  width: 20vw;
+.banner .contact .details .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.banner .contact .details .inputs input {
+  border: 3px solid gray;
+  border-radius: 5px;
+  padding: 5px 0px;
+  padding-right: 5px;
+  background: transparent;
+}
+.banner .contact .details .inputs input::-moz-placeholder {
+  color: rgb(225, 225, 225);
+}
+.banner .contact .details .inputs input::placeholder {
+  color: rgb(225, 225, 225);
+}
+.banner .contact .details textarea {
+  border: 3px solid gray;
+  border-radius: 5px;
+  background: transparent;
+}
+.banner .contact .details textarea::-moz-placeholder {
+  color: white !important;
+}
+.banner .contact .details textarea::placeholder {
+  color: white !important;
+}
+.banner .contact .captcha {
+  display: flex;
+  gap: 10px;
+  padding-top: 50px;
+}
+.banner .contact .captcha .box {
+  border: 3px solid gray;
+  border-radius: 5px;
+  width: 20rem;
   height: 20vh;
-  border: 3px solid grey;
-  border-radius: 20px;
+  box-shadow: inset 0px 0px 400px;
+  display: flex;
+  align-items: center;
   position: relative;
-  display: flex;
-  align-items: center;
-}
-.banner .contact .details .captcha .box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 10px;
 }
-.banner .contact .details .captcha .box .box1 {
-  padding-left: 20px;
+.banner .contact .captcha .box .box1 {
+  margin-left: 10px;
   width: 20px;
   height: 20px;
-  border: 2px solid grey;
-  box-shadow: 0 3px 5px;
+  background: white;
+  border: 1px solid;
+  border-radius: 1px;
+  box-shadow: -1px 2px 3px white;
 }
-.banner .contact .details .captcha .text {
+.banner .contact .captcha .box .rob {
+  margin-top: 12px;
+  color: white;
+}
+.banner .contact .captcha .box .text {
   position: absolute;
-  bottom: -15px;
-  right: 2px;
+  bottom: -10px;
+  right: 0px;
+  color: white;
 }
-.banner .contact .details input {
-  border: 3px solid grey;
-  background-color: transparent;
-  border-radius: 5px;
-  padding: 5px 3px;
-  padding-right: 25rem;
+.banner .contact .captcha .box .text span {
+  font-size: 0.8rem;
+  color: white;
 }
-.banner .contact .message #message {
-  width: 35rem;
-  margin-right: 20px;
-  border: 3px solid grey;
-  background-color: transparent;
-  border-radius: 5px;
+.banner .contact button {
+  background: #444444;
+  padding: 10px 40px;
+  border-radius: 50px;
+  margin-top: 30px;
+  border: 3px solid #004F8F;
 }
 
 .footer {
   padding: 1rem;
   text-align: center;
+  box-shadow: 0px -5px 5px white;
 }
 .footer ul {
   display: none;
@@ -318,6 +431,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     display: block;
     width: 100%;
     padding: 10px 0;
+    box-shadow: 0px 3px 5px white;
   }
   .navbar .pc-nav .dark2 {
     width: 120px;
@@ -378,11 +492,32 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     text-decoration: none;
     cursor: pointer;
   }
-  .footer {
+  .banner .contact .box {
+    width: 20px;
+  }
+  .banner .contact .details {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+  }
+  .banner .contact .details input {
+    width: 40vw;
+  }
+  .banner .contact .details textarea {
+    width: 50vw;
+    height: 25vh;
+  }
+  .banner .contact .details .inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .footer {
+    box-shadow: 0 -4px 10px white;
+  }
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    box-shadow: 0 -4px 10px;
   }
   .footer ul {
     display: block;

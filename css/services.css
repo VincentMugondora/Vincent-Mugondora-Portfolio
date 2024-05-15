@@ -31,9 +31,10 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
+  background: #212121 !important;
 }
 body a {
-  color: black;
+  color: white;
   cursor: pointer;
 }
 
@@ -203,8 +204,7 @@ table {
 }
 
 .services .container {
-  background-color: white;
-  height: 100vh;
+  height: 70vh;
   width: 100%;
 }
 .services .container .card {
@@ -251,6 +251,7 @@ table {
 .footer {
   padding: 1.8rem 0;
   text-align: center;
+  box-shadow: -5px 0px 10px;
 }
 .footer ul {
   display: none;
@@ -260,6 +261,12 @@ table {
 }
 .footer p {
   margin-top: 5px;
+}
+.footer div {
+  display: block;
+}
+.footer div img {
+  height: 50px;
 }
 
 /*
@@ -361,6 +368,24 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     cursor: pointer;
   }
 }
+.footer {
+  box-shadow: 0px -3px 5px white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer ul {
+  display: block;
+  display: flex;
+  gap: 30px;
+}
+.footer div {
+  display: none;
+}
+.footer p {
+  color: white;
+}
+
 /* Extra large devices (large desktops, 1200px and up) */
 /*
 ::::::::::::::::::::::::::::::::::::::::::::::::::::

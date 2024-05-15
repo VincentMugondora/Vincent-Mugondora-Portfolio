@@ -37,10 +37,13 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    background-color: #212121;
+    color: white;
     font-family: "open-sans";
+   
 
     a{
-        color: black;
+        color: white;
         cursor: pointer;
         text-decoration: none;
     }
@@ -398,6 +401,10 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+
+    body{
+        overflow: hidden;
+    }
 
     .pc-nav{
         .link{
